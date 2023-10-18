@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import "./styles/globals.css";
+import Header from './components/header/Header';
+import Profile from './components/profile/Profile';
+import Filter from './components/filters/Filters';
+import NewsFormat from './components/newsFormat/NewsFormat';
+import NewsReport from './components/newsReport/NewsReport';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Profile />
+      <Filter />
+      <NewsFormat />
+      <NewsReport />
     </div>
   );
 }

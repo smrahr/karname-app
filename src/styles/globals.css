@@ -1,0 +1,461 @@
+@font-face {
+  font-family: "iransans";
+  src: url("/public/static/assets/Fonts/Light/IRANSansWeb_Light.eot")
+      format("eot"),
+    url("/public/static/assets/Fonts/Light/IRANSansWeb_Light.woff")
+      format("woff");
+}
+@font-face {
+  font-family: "iransans-bold";
+  src: url("/public/static/assets/Fonts/Bold/IRANSansWeb_Bold.eot")
+      format("eot"),
+    url("/public/static/assets/Fonts/Bold/IRANSansWeb_Bold.woff") format("woff");
+}
+
+body {
+  direction: rtl;
+}
+
+html {
+  background: url(/public/images/bgtop.png) top left,
+    url(/public/images/bgbottom.png) bottom right;
+  background-repeat: repeat, repeat;
+  background-size: auto, auto;
+  background-size: 500px !important;
+  background-repeat: no-repeat, no-repeat !important;
+}
+
+/* html {
+	background: url(pic/bgtop.png) top left ,url(pic/bgbottom.png) bottom right;
+    background-repeat: repeat, repeat;
+    background-size: auto, auto;
+	background-size: 500px !important;
+	background-repeat: no-repeat,no-repeat !important;}
+@font-face{
+	font-family:'iransans';
+	src: url('fonts/Light/IRANSansWeb_Light.eot') format('eot')
+	,url('fonts/Light/IRANSansWeb_Light.woff') format('woff')
+}
+@font-face{
+	font-family:'iransans-bold';
+	src: url('fonts/Bold/IRANSansWeb_Bold.eot') format('eot')
+	,url('fonts/Bold/IRANSansWeb_Bold.woff') format('woff')
+} */
+.title-head {
+  width: 100%;
+}
+.title-head h1 {
+  font-family: iransans-bold;
+  font-size: 35px;
+  color: #2f5d9e;
+  text-align: center;
+  margin: 50px 0 !important;
+}
+.title-head h1::before {
+  content: "";
+  position: absolute;
+  height: 60px;
+  top: 0;
+  width: 41%;
+  background: url(/public/images/titleright.png) no-repeat left;
+  background-size: 100px !important;
+  margin: 50px 0 !important;
+  right: 0;
+}
+.title-head h1::after {
+  content: "";
+  position: absolute;
+  height: 60px;
+  margin: 50px 0 !important;
+  top: 0;
+  width: 41%;
+  background: url(/public/images/titleleft.png) no-repeat right;
+  background-size: 100px !important;
+  left: 0;
+}
+.profile div {
+  width: 88% !important;
+  text-align: right;
+  background: #f0eff0 !important;
+  padding: 30px 40px !important;
+  margin: 50px auto 30px !important;
+  border-radius: 80px 0 !important;
+  font-family: iransans;
+}
+.profile div .profile-image {
+  width: 12% !important;
+  border-radius: 30px 0 !important;
+  float: right !important;
+}
+.profile div ul {
+  list-style: none !important;
+  column-count: 2 !important;
+  margin: 0 !important;
+  background: url(/public/images/tik.png) no-repeat left 30px center;
+  background-size: 120px !important;
+  line-height: 40px !important;
+}
+.profile div ul li h2 {
+  font-size: 18px !important;
+  font-family: iransans-bold !important;
+  margin: 0 !important;
+}
+.profile div ul li p {
+  margin: 0 !important;
+}
+.profile div ul li p {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  color: #48474c !important;
+}
+
+.profile div ul li p b {
+  color: #000 !important;
+  font-family: iransans-bold !important;
+  direction: rtl !important;
+}
+.profile div ul .star p::after {
+  content: "";
+  position: absolute;
+  height: 40px !important;
+  width: 100px !important;
+  background: url(/public/images/star.png) no-repeat;
+  background-size: auto;
+  background-size: 70px;
+  margin: 10px 0 0;
+}
+.section-three-filters {
+  font-family: iransans;
+  float: right !important;
+  width: 23% !important;
+}
+.filter {
+  margin-right: 50px;
+}
+.section-three-filters .filter table {
+  width: 100% !important;
+}
+.bg-yellow {
+  background-color: #ffce00 !important;
+  margin: 0 !important;
+  padding: 10px !important;
+  color: #818181 !important;
+  font-size: 16px;
+  background-image: url(/public/images/filter.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 23px;
+  background-position: left 20px center !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.filter table {
+  background: #bdbdbd !important;
+  line-height: 40px;
+  text-align: center !important;
+  font-family: iransans-bold !important;
+  font-size: 14px !important;
+  border-radius: 0 10px 10px 0 !important;
+  padding: 0 !important;
+  margin: 10px 0 !important;
+}
+.filter .bg-gray {
+  background-image: url(/public/images/bg-table.png) !important;
+  background-size: 170px !important;
+  padding: 0 !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  width: 160px !important;
+  border-radius: 0 10px 0 0 !important;
+}
+.filter tr {
+  background: #c9c9c9 !important;
+  border-radius: 0 10px 0 0 !important;
+  width: 100% !important;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+.filter td {
+  width: 100px !important;
+}
+.filter .bg-gray-1 {
+  background: transparent !important;
+  font-size: 20px !important;
+  border-bottom: 2px solid #fff !important;
+}
+.filter .bg-gray-1 td {
+  text-align: right !important;
+  padding: 0 10px !important;
+  width: 100% !important;
+}
+.filter tr:last-child {
+  margin-bottom: 0 !important;
+}
+.filter .bg-gray-2 {
+  background: url(/public/images/bg-table-l.png) no-repeat !important;
+  background-position: right center !important;
+  background-size: 220px !important;
+  padding: 0 !important;
+  background-repeat: no-repeat !important;
+  width: 300px !important;
+  border-radius: 10px 0 0 0 !important;
+}
+.filter .bg-gray-3 {
+  background: #00c000 !important;
+  font-size: 20px !important;
+  border-radius: 10px 10px 0 0 !important;
+  width: 100% !important;
+}
+
+.filter .bg-gray-3 td {
+  text-align: right !important;
+  padding: 0 10px !important;
+  width: 100% !important;
+}
+.bg-gray-1.no-margin-border {
+  border: 0 !important;
+}
+.filter .no-margin-border {
+  margin: 3px 0 !important;
+}
+
+.center-section {
+  width: 45% !important;
+  float: right !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  padding: 0 50px 0 0 !important;
+  margin: 100px 0;
+}
+.title-center-sec {
+  margin-bottom: 100px;
+}
+.title-center-sec h2 {
+  background: #bdbdbd !important;
+  max-width: max-content !important;
+  text-align: center !important;
+  display: inline-block !important;
+  font-family: iransans-bold !important;
+  padding: 5px 100px !important;
+  font-size: 20px !important;
+  line-height: 40px !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.img-center-sec img {
+  width: 65% !important;
+  margin-top: 120px !important;
+}
+.img-center-sec-bottom img {
+  max-width: -moz-available !important;
+  max-width: -webkit-fill-available !important;
+  margin-top: 150px !important;
+}
+.section-three-filters,
+.center-section {
+  margin-bottom: 100px !important;
+}
+.progress-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+.progress-bar-segment {
+  width: 3%;
+  height: 120px;
+}
+.left-section {
+  width: 23% !important;
+  float: right !important;
+  text-align: center !important;
+  padding: 0 50px 0 0 !important;
+  font-family: iransans !important;
+  margin-bottom: 100px !important;
+}
+.left-section .img-top-left img {
+  width: 75%;
+  text-align: center !important;
+}
+.title-center-sec.left h2 {
+  padding: 3px 87px !important;
+  font-size: 16px !important;
+}
+.title-center-sec.left h3 {
+  margin: 0;
+  font-size: 17px !important;
+  font-weight: bolder !important;
+}
+.left-top-sec {
+  margin: 0 0 50px;
+}
+.filter.left-sec {
+  margin: 70px 0 0 !important;
+  display: inline-block;
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1239px) {
+  .title-head h1::before {
+    width: 35%;
+    background-size: 120px !important;
+  }
+  .title-head h1::after {
+    width: 35%;
+    background-size: 120px !important;
+  }
+  .profile div .profile-image {
+    width: 19% !important;
+  }
+  .profile div ul {
+    background: url(/public/images/tik.png) no-repeat left 0px center;
+    background-size: 110px !important;
+  }
+  .filter {
+    margin-right: 15px;
+  }
+  .section-three-filters {
+    width: 30% !important;
+  }
+  .img-center-sec img {
+    width: 65% !important;
+    margin-top: 175px !important;
+  }
+  .center-section {
+    padding: 0 20px 0 0 !important;
+  }
+  .left-section {
+    width: 17% !important;
+  }
+  .title-center-sec.left h2 {
+    padding: 3px 35px !important;
+    font-size: 14px !important;
+  }
+  .left-section .img-top-left img {
+    width: 100%;
+  }
+  .img-center-sec-bottom img {
+    margin-top: 290px !important;
+  }
+  .filter.left-sec {
+    margin: 270px 0 0 !important;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 959px) {
+  .title-head h1::before {
+    width: 30%;
+    background-size: 145px !important;
+  }
+  .title-head h1::after {
+    width: 30%;
+    background-size: 145px !important;
+  }
+  .profile div .profile-image {
+    width: 24% !important;
+  }
+  .profile div ul {
+    background: none !important;
+  }
+  .filter {
+    margin-right: 15px;
+  }
+  .section-three-filters {
+    width: 40% !important;
+  }
+  .img-center-sec img {
+    width: 65% !important;
+    margin-top: 300px !important;
+  }
+  .center-section {
+    padding: 0 20px 0 0 !important;
+    width: 55% !important;
+  }
+  .left-section {
+    width: 88% !important;
+  }
+  .title-center-sec.left h2 {
+    padding: 4px 83px !important;
+    font-size: 17px !important;
+  }
+  .left-section .img-top-left img {
+    width: 100%;
+  }
+  .img-center-sec-bottom img {
+    margin-top: 195px !important;
+  }
+  .filter.left-sec {
+    margin: 0 0 !important;
+  }
+  .left-section .left-top-sec {
+    width: 45%;
+    float: right !important;
+  }
+  .left-bottom-sec {
+    width: 45% !important;
+    float: left !important;
+  }
+  .left-section {
+    margin-bottom: 40px !important;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 759px) {
+  .title-head h1::before {
+    background: none !important;
+  }
+  .title-head h1::after {
+    background: none !important;
+  }
+  .profile div {
+    margin: 0 auto 30px !important;
+    width: 70% !important;
+  }
+  .profile div .profile-image {
+    width: 98% !important;
+  }
+  .profile div ul {
+    padding: 20px !important;
+    column-count: 1 !important;
+    background: none !important;
+  }
+  .section-three-filters {
+    width: 100% !important;
+  }
+  .filter {
+    margin: 0 10px !important;
+  }
+
+  .center-section {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .img-center-sec img {
+    width: 90%;
+    margin-top: 0 !important;
+  }
+  .section-three-filters,
+  .center-section {
+    margin-bottom: 40px !important;
+  }
+  .img-center-sec-bottom img {
+    margin-top: 0 !important;
+  }
+  .left-section {
+    margin-bottom: 40px !important;
+    width: 100% !important;
+    float: none !important;
+    padding: 0 !important;
+  }
+  .filter.left-sec {
+    margin: 0 !important;
+  }
+  .title-head h1 {
+    margin: 40px 0 20px !important;
+  }
+
+  .progress-bar-segment {
+    width: 3%;
+    height: 40px;
+  }
+
+  .center-section {
+    margin: 50px 0 !important;
+  }
+}
