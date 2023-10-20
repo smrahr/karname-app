@@ -19,32 +19,34 @@ export default function SpeedChart({ data }) {
   return (
     <div>
       <ReactSpeedometer
-        maxValue={+data.lN_Range10}
+        maxValue={0}
+        minValue={+data.lN_Range10}
         value={10}
         valueFormat={"d"}
-        customSegmentStops={customSegmentStops}
+        customSegmentStops={customSegmentStops.reverse()}
         segmentColors={[
-          "#128837",
-          "#71AC00",
-          "#B3B700",
-          "#FFF100",
-          "#FFCE00",
-          "#FF9D00",
-          "#FF6C00",
-          "#FF4700",
           "#860000",
+          "#AE0000",
+          "#FF4700",
+          "#FF6C00",
+          "#FF9D00",
+          "#FFCE00",
+          "#FFF100",
+          "#B3B700",
+          "#71AC00",
+          "#128837",
         ]}
         currentValueText={" ${value} "}
         textColor={"black"}
       />
       <div className="amount-arrow">
-        <div>خیلی ضعیف</div>
-        <div className="line"></div>
-        <div>ضعیف</div>
+        <div>عالی</div>
         <div className="line"></div>
         <div>خوب</div>
         <div className="line"></div>
-        <div>عالی</div>
+        <div>ضعیف</div>
+        <div className="line"></div>
+        <div>خیلی ضعیف</div>
       </div>
     </div>
   );

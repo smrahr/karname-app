@@ -45,14 +45,14 @@ const NewsFormat = ({ data }) => {
       },
       responsive: [
         {
-          breakpoint: 480,
+          breakpoint: 700,
           options: {
             chart: {
-              width: 450,
+              width: 500,
             },
             legend: {
-              fontSize: "10px",
-              position: "right",
+              fontSize: "12px",
+              // position: "right",
             },
           },
           plotOptions: {
@@ -64,20 +64,29 @@ const NewsFormat = ({ data }) => {
           },
         },
         {
-          breakpoint: 700,
+          breakpoint: 480,
           options: {
             chart: {
-              width: 500,
+              width: "100%",
+            },
+            dataLabels: {
+              style: {
+                colors: ["#000"],
+                fontSize: "15px",
+              },
+              formatter: function (val) {
+                return Math.floor(val) + "%";
+              },
             },
             legend: {
-              fontSize: "12px",
-              position: "right",
+              fontSize: "14px",
+              // position: "right",
             },
           },
           plotOptions: {
             pie: {
               donut: {
-                size: "20%",
+                size: "25%",
               },
             },
           },
@@ -86,8 +95,14 @@ const NewsFormat = ({ data }) => {
     },
   });
   const fetchData = () => {
-    const newsFormatData = data.map((item) => +item.fieldPercent);
-    const newsFormatLabel = data.map((item) => item.fieldText);
+    let newsFormatData = [];
+    let newsFormatLabel = [];
+
+    data.forEach((item) => {
+      item.fieldPercent && newsFormatData.push(+item.fieldPercent);
+      item.fieldText && newsFormatLabel.push(item.fieldText);
+    });
+
     setChartData({
       ...chartData,
       series: newsFormatData,
