@@ -1,100 +1,116 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import ProgressBar from "./ProgressBar";
 // import "./newsFormat.css";
+import { data } from "../../data";
 
-const NewsFormat = () => {
-  const series = [25, 10, 13, 25, 15, 12];
-  const options = {
-    chart: {
-      type: "donut",
-    },
-    labels: [
-      "خبر پوششی",
-      "خبر دریافتی",
-      "مصاحبه",
-      "گزارش میدانی",
-      "خبر تولیدی",
-      "گزارش خبری",
-    ],
-    dataLabels: {
-      style: {
-        colors: ["#000"],
-        fontSize: "25px",
+const NewsFormat = ({ data }) => {
+  const [chartData, setChartData] = useState({
+    series: [],
+    options: {
+      chart: {
+        type: "donut",
       },
-    },
-    fill: {
-      type: "gradient",
-      // colors: [
-      //   "#F9A11D",
-      //   "#FFDD00",
-      //   "#5FBA46",
-      //   "#10B0E7",
-      //   "#C14A9C",
-      //   "#EC1F23",
-      // ],
-    },
-    legend: {
-      position: "top",
-      fontSize: "18px",
-    },
-    plotOptions: {
-      pie: {
-        donut: {
-          size: "25%",
+      labels: [],
+      colors: [
+        "#F9A11D",
+        "#FFDD00",
+        "#5FBA46",
+        "#10B0E7",
+        "#C14A9C",
+        "#EC1F23",
+      ],
+      dataLabels: {
+        style: {
+          colors: ["#000"],
+          fontSize: "25px",
+        },
+        formatter: function (val) {
+          return Math.floor(val) + "%";
         },
       },
-    },
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          chart: {
-            width: 450,
-          },
-          legend: {
-            fontSize: "10px",
-            position: "right",
+      fill: {
+        type: "gradient",
+      },
+      legend: {
+        position: "top",
+        fontSize: "18px",
+      },
+      plotOptions: {
+        pie: {
+          donut: {
+            size: "25%",
           },
         },
-        plotOptions: {
-          pie: {
-            donut: {
-              size: "20%",
+      },
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 450,
+            },
+            legend: {
+              fontSize: "10px",
+              position: "right",
+            },
+          },
+          plotOptions: {
+            pie: {
+              donut: {
+                size: "20%",
+              },
             },
           },
         },
-      },
-      {
-        breakpoint: 700,
-        options: {
-          chart: {
-            width: 500,
+        {
+          breakpoint: 700,
+          options: {
+            chart: {
+              width: 500,
+            },
+            legend: {
+              fontSize: "12px",
+              position: "right",
+            },
           },
-          legend: {
-            fontSize: "12px",
-            position: "right",
-          },
-        },
-        plotOptions: {
-          pie: {
-            donut: {
-              size: "20%",
+          plotOptions: {
+            pie: {
+              donut: {
+                size: "20%",
+              },
             },
           },
         },
-      },
-    ],
+      ],
+    },
+  });
+  const fetchData = () => {
+    const newsFormatData = data.map((item) => +item.fieldPercent);
+    const newsFormatLabel = data.map((item) => item.fieldText);
+    setChartData({
+      ...chartData,
+      series: newsFormatData,
+      options: { ...chartData.options, labels: newsFormatLabel },
+    });
   };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <div className="center-section">
       <div className="format-chart">
-        <Chart options={options} series={series} type="donut" width={700} />
+        <Chart
+          options={chartData.options}
+          series={chartData.series}
+          type="donut"
+          width={700}
+        />
       </div>
       <div class="title-center-sec">
         <h2>قالب های خبری</h2>
       </div>
-      <ProgressBar />
+      <ProgressBar data={76} />
       <div style={{ textAlign: "right" }}>
         <h2>جامعیت (خبری خوری)</h2>
       </div>

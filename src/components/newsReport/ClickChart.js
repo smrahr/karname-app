@@ -1,14 +1,27 @@
 import React from "react";
-// import ReactSpeedometer from "react-d3-speedometer";
+import ReactSpeedometer from "react-d3-speedometer";
 
-export default function ClickChart() {
+export default function ClickChart({ data }) {
+  const customSegmentStops = [
+    0,
+    +data.cR_Range1,
+    +data.cR_Range2,
+    +data.cR_Range3,
+    +data.cR_Range4,
+    +data.cR_Range5,
+    +data.cR_Range6,
+    +data.cR_Range7,
+    +data.cR_Range8,
+    +data.cR_Range9,
+    +data.cR_Range10,
+  ];
   return (
-    <div >
-      {/* <ReactSpeedometer
-        maxValue={500}
-        value={10}
+    <div>
+      <ReactSpeedometer
+        maxValue={+data.cR_Range10}
+        value={60}
         valueFormat={"d"}
-        customSegmentStops={[0, 30, 60, 84, 120, 200, 250, 350, 400, 450, 500]}
+        customSegmentStops={customSegmentStops}
         segmentColors={[
           "#128837",
           "#71AC00",
@@ -20,10 +33,18 @@ export default function ClickChart() {
           "#FF4700",
           "#860000",
         ]}
-        // currentValueText={"CPU Usage: ${value} %"}
         currentValueText={" ${value} "}
         textColor={"black"}
-      /> */}
+      />
+      <div className="amount-arrow">
+        <div>خیلی ضعیف</div>
+        <div className="line"></div>
+        <div>ضعیف</div>
+        <div className="line"></div>
+        <div>خوب</div>
+        <div className="line"></div>
+        <div>عالی</div>
+      </div>
     </div>
   );
 }

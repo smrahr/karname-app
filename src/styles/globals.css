@@ -252,6 +252,9 @@ html {
 .center-section {
   margin-bottom: 100px !important;
 }
+.center-section .apexcharts-canvas {
+  width: 100% !important;
+}
 .progress-bar {
   display: flex;
   flex-wrap: nowrap;
@@ -269,11 +272,34 @@ html {
   padding: 0 50px 0 0 !important;
   font-family: iransans !important;
   margin-bottom: 100px !important;
+  margin: 100px 0;
 }
 .left-section .img-top-left img {
   width: 75%;
   text-align: center !important;
 }
+
+.left-section svg {
+  height: 180px !important;
+}
+
+.amount-arrow {
+  width: 300px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.amount-arrow .line {
+  width: 10%;
+  height: 1px;
+  background-color: #48474c;
+}
+.amount-arrow {
+  padding: 0 2px;
+}
+
 .title-center-sec.left h2 {
   padding: 3px 87px !important;
   font-size: 16px !important;

@@ -1,18 +1,19 @@
 import React from "react";
 
-function ProgressBar() {
-  const value = Math.floor((76 * 20) / 100);
-  const remain = ((76 * 20) % 100) / 100;
+function ProgressBar({ data }) {
+  const filledProgress = Math.floor((data * 20) / 100);
+  const remain = ((data * 20) % 100) / 100;
 
-  const List = () => {
+  const progresses = () => {
     let progress = [];
     for (let index = 1; index <= 20; index++) {
-      let progressValue = index <= value ? 1 : index === value + 1 ? remain : 0;
+      let progressValue =
+        index <= filledProgress ? 1 : index === filledProgress + 1 ? remain : 0;
       progress.push({ value: progressValue });
     }
     return progress;
   };
-  List();
+  progresses();
   const color = [
     "#8E0303",
     "#9F0202",
@@ -21,41 +22,42 @@ function ProgressBar() {
     "#FB4A05",
     "#e05301",
     "#dd5404",
-    "#8E0303",
-    "#9F0202",
-    "#B80A01",
-    "#DC2B03",
-    "#FB4A05",
-    "#e05301",
-    "#dd5404",
-    "#8E0303",
-    "#9F0202",
-    "#B80A01",
-    "#DC2B03",
-    "#FB4A05",
-    "#e05301",
+    "#EC6501",
+    "#F48309",
+    "#FEA211",
+    "#FFB916",
+    "#FFD119",
+    "#FDE10D",
+    "#F8E902",
+    "#DDD714",
+    "#FFCE00",
+    "#FFF100",
+    "#9cb700",
+    "#71AC00",
+    "#128837",
   ];
-
-  console.log();
 
   return (
     <div className="progress-bar">
-      {List()?.map((item, index) => (
-        <progress
-          className="progress-bar-segment"
-          key={index}
-          style={{
-            accentColor: color[index],
-          }}
-          value={item.value}
-          title={
-            item.value !== 1 && item.value !== 0
-              ? item.value * 5 + index * 5
-              : ""
-          }
-          // title="30% Complete"
-        />
-      ))}
+      {progresses()?.map((item, index) => {
+        return (
+          <progress
+            className="progress-bar-segment"
+            key={index}
+            style={
+              item.value == "0"
+                ? {
+                    accentColor: "#8E0303",
+                  }
+                : {
+                    accentColor: color[index],
+                  }
+            }
+            value={item.value}
+            title={item.value !== 1 && item.value !== 0 ? `% ${data}` : ""}
+          />
+        );
+      })}
     </div>
   );
 }
