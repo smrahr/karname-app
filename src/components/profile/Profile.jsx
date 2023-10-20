@@ -1,5 +1,3 @@
-// import "./profile.css";
-
 const Profile = ({ data }) => {
   return (
     <div className="profile">

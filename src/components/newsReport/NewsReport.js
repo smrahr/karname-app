@@ -1,6 +1,5 @@
 import ClickChart from "./ClickChart";
 import SpeedChart from "./SpeedChart";
-// import "./newsReport.css";
 const NewsReport = ({ data }) => {
   return (
     <div className="left-section">

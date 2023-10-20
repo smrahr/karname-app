@@ -1,4 +1,3 @@
-// import "./header.css";
 const Header = () => {
   return (
     <div className="title-head">

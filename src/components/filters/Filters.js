@@ -1,4 +1,3 @@
-// import "./filters.css";
 const Filter = () => {
   return (
     <div className="section-three-filters">

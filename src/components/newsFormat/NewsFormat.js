@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import ProgressBar from "./ProgressBar";
-// import "./newsFormat.css";
 import { data } from "../../data";
 
 const NewsFormat = ({ data }) => {
